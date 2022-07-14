@@ -1,11 +1,20 @@
-import React from 'react';
-import { Task } from '../../models/task.class'
-import { LEVELS } from '../../models/levels.enum'
+import React, { useState, useEffect } from 'react';
+import { Task } from '../../models/task.class';
+import { LEVELS } from '../../models/levels.enum';
 
 const TaskListComponent = () => {
+
+    const [task, setTask] = useState([defaultTask]);
+
     const defaultTask = new Task( ' Example', 'Default description', false, LEVELS.NORMAL);
 
-    const changeState = (id) => {
+    useEffect(() => {
+        return () => {
+            
+        };
+    }, [task])
+
+    const changeCompleted = (id) => {
         console.log('Change state of task')
     }
     
