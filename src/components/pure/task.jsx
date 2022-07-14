@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Task } from '../../models/task.class'
 
 import PropTypes from 'prop-types';
 
 const TaskComponent = ({ task }) => {
+
+  useEffect(() => {
+    return () => {
+    };
+  }, []);
 
   return (
     <div>
@@ -17,7 +22,7 @@ const TaskComponent = ({ task }) => {
         Level : { task.level }
       </h3>
       <h5>
-         This task is: { task.complete ? 'COMPLETED' : 'PENDING'}
+        This task is: { task.complete ? 'COMPLETED' : 'PENDING'}
       </h5>
     </div>
   )
