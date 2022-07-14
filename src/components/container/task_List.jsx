@@ -5,10 +5,12 @@ import { LEVELS } from '../../models/levels.enum';
 const TaskListComponent = () => {
 
     const [task, setTask] = useState([defaultTask]);
+    const [loading, setLoading] = useState(false);
 
     const defaultTask = new Task( ' Example', 'Default description', false, LEVELS.NORMAL);
 
     useEffect(() => {
+        setLoading(false);
         return () => {
             
         };
